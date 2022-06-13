@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+//use phpParser/node\stmt\
+use App\Http\Controllers\ProductoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -106,3 +107,13 @@ Route::get('Paises', function(){
           ->with("paises", $paises);
 
 });
+
+Route::get('prueba', function(){
+    return view('productos.new');
+
+});
+
+//create routes rest
+Route::resource('productos',
+        ProductoController::class);
+?>
